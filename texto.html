@@ -6,11 +6,14 @@
   <title>Textinho</title>
   <link href="./styles/texto.css" rel="stylesheet">
 </head>
-<audio autoplay>
-    <source src="./assets/musicaed.mp3" type="audio/mpeg">
-    Seu navegador não suporta áudio.
-  </audio>
+
+<audio autoplay loop>
+  <source src="./assets/musicaed.mp3" type="audio/mpeg">
+  Seu navegador não suporta áudio.
+</audio>
+
 <body>
+  <!-- Tela principal -->
   <div class="typing-wrapper">
     <img class="imagem" src="./assets/images/islafoto.jpg" alt="">
 
@@ -20,29 +23,42 @@
     <div class="typing-line linha4">Feliz aniversário, minha princesa!</div>
 
     <div class="feedback-container" id="feedback">
-        <p>Gostou?</p>
-        <div class="botoes">
-            <button onclick="mudarPorcentagem(-10)">-</button>
-            <span id="porcentagem">0%</span>
-            <button onclick="mudarPorcentagem(10)">+</button>
-        </div>
+      <p>Gostou?</p>
+      <div class="botoes">
+        <button onclick="mudarPorcentagem(-10)">-</button>
+        <span id="porcentagem">0%</span>
+        <button onclick="mudarPorcentagem(10)">+</button>
+      </div>
     </div>
+
     <a class="next-button">Feito com carinho! 💌</a>
   </div>
-  
+
+  <!-- Tela final de "eu te amo" -->
+  <div id="tela-eu-te-amo" style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center; background-color: #fff0f5;">
+    <h1 style="color: #ff1493; font-size: 6vw;">❤️ EU TE AMO MUITO, MINHA PRINCESA ❤️</h1>
+    <p style="font-size: 4vw; color: #db1e76;">Você é a melhor parte da minha vida!</p>
+  </div>
 </body>
-</html>
 
 <script>
-    let porcentagem = 0;
-  
-    function mudarPorcentagem(valor) {
-      porcentagem += valor;
-  
-      if (porcentagem > 100) porcentagem = 100;
-      if (porcentagem < 0) porcentagem = 0;
-  
-      document.getElementById('porcentagem').textContent = porcentagem + '%';
+  let porcentagem = 0;
+
+  function mudarPorcentagem(valor) {
+    porcentagem += valor;
+
+    if (porcentagem > 100) porcentagem = 100;
+    if (porcentagem < 0) porcentagem = 0;
+
+    document.getElementById('porcentagem').textContent = porcentagem + '%';
+
+    if (porcentagem === 100) {
+      setTimeout(() => {
+        document.querySelector('.typing-wrapper').style.display = 'none';
+        document.getElementById('tela-eu-te-amo').style.display = 'flex';
+      }, 1000); // pequeno delay pra dar tempo de curtir o 100%
     }
-  </script>
-  
+  }
+</script>
+</html>
+>>>>>>> 6e555ec (adicionado eu te amo)
