@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Textinho</title>
+  <link href="./styles/texto.css" rel="stylesheet">
+</head>
+<audio autoplay>
+    <source src="./assets/musicaed.mp3" type="audio/mpeg">
+    Seu navegador não suporta áudio.
+  </audio>
+<body>
+  <div class="typing-wrapper">
+    <img class="imagem" src="./assets/images/islafoto.jpg" alt="">
+
+    <div class="typing-line linha1">Meus dias são bem mais</div>
+    <div class="typing-line linha2">coloridos com você.</div>
+    <div class="typing-line linha3">Eu te amo, em corpo e alma.</div>
+    <div class="typing-line linha4">Feliz aniversário, minha princesa!</div>
+
+    <div class="feedback-container" id="feedback">
+        <p>Gostou?</p>
+        <div class="botoes">
+            <button onclick="mudarPorcentagem(-10)">-</button>
+            <span id="porcentagem">0%</span>
+            <button onclick="mudarPorcentagem(10)">+</button>
+        </div>
+    </div>
+    <a class="next-button">Feito com carinho! 💌</a>
+  </div>
+  
+</body>
+</html>
+
+<script>
+    let porcentagem = 0;
+  
+    function mudarPorcentagem(valor) {
+      porcentagem += valor;
+  
+      if (porcentagem > 100) porcentagem = 100;
+      if (porcentagem < 0) porcentagem = 0;
+  
+      document.getElementById('porcentagem').textContent = porcentagem + '%';
+    }
+  </script>
+  
